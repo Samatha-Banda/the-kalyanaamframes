@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — The KalyaanamFrames</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="header scrolled" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">The<span class="gold italic">Kalyaanam</span>Frames</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">Studio</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-header">BOOK A SHOOT</a>
+      <button class="mobile-btn" id="mobileToggle"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <div class="contact-hero">
+    <div class="container fade-up">
+      <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">Get In Touch</div>
+      <h1 class="font-serif">Let's Create <em style="color:var(--accent-marigold)">Magic</em> Together</h1>
+      <p>Tell us about your celebration and we'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper fade-up">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;">
+          <div>
+            <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-secondary);display:block;margin-bottom:0.5rem;">Your Name</label>
+            <input type="text" id="contactName" class="form-input" placeholder="Priya Sharma">
+          </div>
+          <div>
+            <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-secondary);display:block;margin-bottom:0.5rem;">Phone / WhatsApp</label>
+            <input type="tel" id="contactPhone" class="form-input" placeholder="+91 98765 43210">
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-secondary);display:block;margin-bottom:0.5rem;">Email Address</label>
+          <input type="email" id="contactEmail" class="form-input" placeholder="priya@example.com">
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-secondary);display:block;margin-bottom:0.5rem;">Wedding / Event Date</label>
+          <input type="text" id="contactDate" class="form-input" placeholder="December 2026">
+        </div>
+        <div>
+          <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-secondary);display:block;margin-bottom:0.5rem;">Tell us about your celebration</label>
+          <textarea id="contactDetails" class="form-input" rows="5" placeholder="Share details about your event, location, and what you're looking for..."></textarea>
+        </div>
+        
+        <div id="formMessage" style="margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none; text-align: center;"></div>
+
+        <button id="submitInquiryBtn" class="btn btn-solid-gold" style="margin-top:1rem;width:100%;justify-content:center;">
+          Send Inquiry <i data-lucide="send" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">The<span class="gold italic">Kalyaanam</span>Frames</span>
+          <p>Modern editorial wedding photography & cinematography based in South India.</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="" style="width:18px;height:18px;"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">Studio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@thekalyanamframes.com">thekalyaanamframes@gmail.com</a></li>
+            <li><a href="tel:+919876543210">+91 63058 43819</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.9rem;margin-top:1rem;">Karimnagar, Telangana</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 The KalyaanamFrames. All rights reserved.</p>
+        <p>Made with ♥ in Karimnagar</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

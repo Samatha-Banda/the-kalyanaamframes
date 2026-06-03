@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The KalyaanamFrames — Editorial Wedding Photography</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">The<span class="gold italic">Kalyaanam</span>Frames.</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">Studio</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-header">BOOK A SHOOt</a>
+      <button class="mobile-btn" id="mobileToggle"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-fullscreen">
+    <div class="hero-bg">
+      <img src="images/bride-hero.png" alt="Indian Bride">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content fade-up" style="transition-delay:0.2s">
+      <div class="hero-eyebrow">Curated Cinematic Weddings</div>
+      <h1 class="font-serif">
+        Where fleeting moments<br>
+        become <em class="text-gold">eternal art.</em>
+      </h1>
+      <p class="hero-desc">
+        Weaving the quiet, unspoken magic of your celebration into a stunning cinematic legacy meant to last for generations.
+      </p>
+      <div class="hero-buttons">
+        <a href="portfolio.html" class="btn btn-solid-gold">View Collection <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+        <a href="contact.html" class="btn btn-outline-white">BOOK YOUR SHOOT</a>
+      </div>
+    </div>
+    <div class="scroll-indicator fade-up" style="transition-delay:0.6s">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>Weddings</span><span class="dot">✦</span>
+      <span>PreWedding</span><span class="dot">✦</span>
+      <span>Engagement</span><span class="dot">✦</span>
+      <span>Haldi</span><span class="dot">✦</span>
+      <span>Sangeet</span><span class="dot">✦</span>
+      <span>Reception</span><span class="dot">✦</span>
+      <span>Babyshoots</span><span class="dot">✦</span>
+      <span>Birthdays</span><span class="dot">✦</span>
+      <span>Portraits</span><span class="dot">✦</span>
+      <span>Weddings</span><span class="dot">✦</span>
+      <span>PreWedding</span><span class="dot">✦</span>
+      <span>Engagement</span><span class="dot">✦</span>
+      <span>Haldi</span><span class="dot">✦</span>
+      <span>Sangeet</span><span class="dot">✦</span>
+      <span>Reception</span><span class="dot">✦</span>
+      <span>Babyshoots</span><span class="dot">✦</span>
+      <span>Birthdays</span><span class="dot">✦</span>
+      <span>Portraits</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- Collections — cards do NOT redirect, just decorative -->
+  <section class="collections-section section-padding">
+    <div class="container">
+      <div class="collections-header fade-up">
+        <div class="collections-title">
+          <div class="section-eyebrow">Our Collections</div>
+          <h2 class="font-serif">Stories told in light,<br><em class="text-rose">silk and silence.</em></h2>
+        </div>
+        <div class="collections-desc">
+          <p>From sun-soaked haldi mornings to chandelier-lit receptions — every chapter, framed with intention.</p>
+          <div class="carousel-nav">
+            <button id="btnPrev"><i data-lucide="chevron-left"></i></button>
+            <button id="btnNext"><i data-lucide="chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="collections-carousel fade-up" id="collectionsCarousel" style="transition-delay:0.2s">
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #1f1235 0%, #0a0a0a 100%);">
+          <img src="images/weddings.png" alt="Weddings" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">01 — Collection</span>
+            <div class="card-text"><h3>Weddings</h3><p>Sacred vows, eternal frames</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #2a1b1b 0%, #0a0a0a 100%);">
+          <img src="images/prewedding.png" alt="PreWedding" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">02 — Collection</span>
+            <div class="card-text"><h3>PreWedding</h3><p>Stories before the saree</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #1b1c2a 0%, #0a0a0a 100%);">
+          <img src="images/engagement.png" alt="Engagement" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">03 — Collection</span>
+            <div class="card-text"><h3>Engagement</h3><p>First promises in soft light</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #1b2a22 0%, #0a0a0a 100%);">
+          <img src="images/reception.png" alt="Reception" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">04 — Collection</span>
+            <div class="card-text"><h3>Reception</h3><p>A grand celebration of love</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #2a251b 0%, #0a0a0a 100%);">
+          <img src="images/haldi.jpg" alt="Haldi" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">05 — Collection</span>
+            <div class="card-text"><h3>Haldi</h3><p>Vibrant colors, joyful blessings</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #2a1b1b 0%, #0a0a0a 100%);">
+          <img src="images/sangeet-new.jpg" alt="Sangeet" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">06 — Collection</span>
+            <div class="card-text"><h3>Sangeet</h3><p>Rhythms of a new beginning</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #1b212a 0%, #0a0a0a 100%);">
+          <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=700&q=80&auto=format" alt="Babyshoots" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">07 — Collection</span>
+            <div class="card-text"><h3>Babyshoots</h3><p>Tiny steps, infinite love</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #2a1f1b 0%, #0a0a0a 100%);">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&q=80&auto=format" alt="Birthdays" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">08 — Collection</span>
+            <div class="card-text"><h3>Birthdays</h3><p>Milestones captured beautifully</p></div>
+          </div>
+        </div>
+
+        <div class="collection-card" style="background: linear-gradient(135deg, #232a1b 0%, #0a0a0a 100%);">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=80&auto=format" alt="Portraits" loading="lazy">
+          <div class="collection-overlay">
+            <span class="card-number">09 — Collection</span>
+            <div class="card-text"><h3>Portraits</h3><p>Timeless reflections of you</p></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="portfolio.html" class="btn btn-gold">Explore Full Portfolio <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="about-teaser">
+    <div class="container">
+      <div class="about-teaser-grid">
+        <div class="about-image-wrap">
+          <img src="images/bride-studio-2.jpg" alt="Studio Bride Portrait">
+          <div class="about-badge">Est.<br>2024<br>★★★★★</div>
+        </div>
+        <div class="about-content fade-up" style="transition-delay:0.2s">
+          <div class="section-eyebrow">The Studio</div>
+          <h2 class="font-serif">Crafted with <em class="gradient-text">love</em> for every celebration</h2>
+          <p>We are The KalyaanamFrames — a boutique photography and cinematography studio based in Karimnagar, South India. We specialise in telling the authentic stories of South Indian weddings and celebrations.</p>
+          <p>Every frame we capture is a piece of your legacy — warm, real, and breathtakingly yours.</p>
+          <div class="services-list">
+            <span class="service-tag">Wedding Photography</span>
+            <span class="service-tag">Cinematography &amp; Films</span>
+            <span class="service-tag">Pre-Wedding Shoots</span>
+            <span class="service-tag">Baby &amp; Birthday Portraits</span>
+          </div>
+          <a href="about.html" class="btn btn-gold">Meet the Studio <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-up"><span class="stat-number">100+</span><span class="stat-label">Weddings Captured</span></div>
+        <div class="stat-item fade-up" style="transition-delay:0.1s"><span class="stat-number">2</span><span class="stat-label">Years of Artistry</span></div>
+        <div class="stat-item fade-up" style="transition-delay:0.2s"><span class="stat-number">12</span><span class="stat-label">Cities Covered</span></div>
+        <div class="stat-item fade-up" style="transition-delay:0.3s"><span class="stat-number">98%</span><span class="stat-label">Happy Families</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">The<span class="gold italic">Kalyaanam</span>Frames</span>
+          <p>Modern editorial wedding photography &amp; cinematography based in South India. Capturing love stories since 2024.</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="m" style="width:18px;height:18px;"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">Studio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mail to:thekalyaanamframes@gmail.com">thekalyaanamframes@gmail.com</a></li>
+            <li><a href="tel:+91 63058 43819">+91 63058 43819</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.9rem;margin-top:1rem;">Karimnagar, Telangana</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 The KalyaanamFrames. All rights reserved.</p>
+        <p>Made with ♥ in Karimnagar</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

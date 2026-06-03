@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — The KalyaanamFrames</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* ── Portfolio-specific overrides ── */
+    .port-hero {
+      background: #0a0a0a;
+      padding: 9rem 0 4rem;
+    }
+    .port-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-family: var(--font-sans);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .port-eyebrow::before { content:'—'; color: var(--accent-gold); }
+    .port-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      color: white;
+      line-height: 1.1;
+    }
+    .port-hero h1 em { color: var(--accent-gold); font-style: italic; }
+
+    /* ── Filter bar (horizontal line style like image 1) ── */
+    .filter-wrap {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .filter-bar-port {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0;
+    }
+    .filter-bar-port::-webkit-scrollbar { display: none; }
+    .filter-btn-port {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      padding: 1.1rem 1.6rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .filter-btn-port::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .filter-btn-port:hover { color: rgba(255,255,255,0.85); }
+    .filter-btn-port.active {
+      color: var(--accent-gold);
+      background: rgba(212,175,55,0.08);
+    }
+    .filter-btn-port.active::after { transform: scaleX(1); }
+
+    /* ── Collection Grid (horizontal scroll cards, image 2 style) ── */
+    .collection-section {
+      background: #0c0c0c;
+      padding: 3rem 0 5rem;
+    }
+    .collection-row {
+      display: flex;
+      gap: 1.4rem;
+      overflow-x: auto;
+      padding: 0 2rem 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212,175,55,0.3) transparent;
+      scroll-snap-type: x mandatory;
+    }
+    .collection-row::-webkit-scrollbar { height: 3px; }
+    .collection-row::-webkit-scrollbar-track { background: transparent; }
+    .collection-row::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 2px; }
+
+    .col-card {
+      flex: 0 0 340px;
+      height: 480px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .col-card:hover { transform: translateY(-6px); }
+    .col-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
+      display: block;
+    }
+    .col-card:hover img { transform: scale(1.07); }
+    .col-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem 1.8rem;
+    }
+    .col-card-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-sans);
+    }
+    .col-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 400;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .col-card p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-family: var(--font-sans);
+    }
+
+    /* Per-card accent colors */
+    .col-card:nth-child(1) .col-card-num { color: #e879a5; }
+    .col-card:nth-child(2) .col-card-num { color: #f59e0b; }
+    .col-card:nth-child(3) .col-card-num { color: #a78bfa; }
+    .col-card:nth-child(4) .col-card-num { color: #34d399; }
+    .col-card:nth-child(5) .col-card-num { color: #fbbf24; }
+    .col-card:nth-child(6) .col-card-num { color: #f87171; }
+    .col-card:nth-child(7) .col-card-num { color: #60a5fa; }
+    .col-card:nth-child(8) .col-card-num { color: #fb923c; }
+    .col-card:nth-child(9) .col-card-num { color: #a3e635; }
+
+    /* Hidden by default, shown by filter */
+    .col-card.hidden { display: none; }
+
+    /* Coming soon */
+    .coming-soon {
+      display: none;
+      text-align: center;
+      padding: 6rem 2rem;
+      color: white;
+    }
+    .coming-soon.active { display: block; }
+    .coming-soon-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      font-family: var(--font-sans);
+    }
+    .coming-soon h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Nav + footer on dark bg */
+    .port-nav-wrap .header { background: rgba(10,10,10,0.98) !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .port-nav-wrap .brand-logo,
+    .port-nav-wrap .nav-link,
+    .port-nav-wrap .btn-header { color: white !important; }
+    .port-nav-wrap .nav-link.active,
+    .port-nav-wrap .nav-link:hover { color: var(--accent-gold) !important; }
+    .port-nav-wrap .btn-header { border-color: rgba(255,255,255,0.35) !important; }
+    .port-nav-wrap .btn-header:hover { color: var(--accent-gold) !important; border-color: var(--accent-gold) !important; }
+    .port-nav-wrap .mobile-btn { color: white !important; }
+  </style>
+</head>
+<body class="port-nav-wrap">
+
+  <header class="header" id="header" style="background:rgba(10,10,10,0.98);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" style="color:white;">The<span style="color:var(--accent-gold);font-style:italic;">Kalyaanam</span>Frames</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link" style="color:rgba(255,255,255,0.6);">Home</a>
+        <a href="portfolio.html" class="nav-link active" style="color:var(--accent-gold);">Portfolio</a>
+        <a href="about.html" class="nav-link" style="color:rgba(255,255,255,0.6);">Studio</a>
+        <a href="contact.html" class="nav-link" style="color:rgba(255,255,255,0.6);">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-header" style="color:white;border-color:rgba(255,255,255,0.35);">Book a Shoot</a>
+      <button class="mobile-btn" id="mobileToggle" style="color:white;"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="port-hero">
+    <div class="container">
+      <p class="port-eyebrow fade-up">Portfolio</p>
+      <h1 class="fade-up" style="transition-delay:0.1s">
+        A library of <em>moments</em>,<br>quietly composed.
+      </h1>
+    </div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-wrap">
+    <div class="container" style="padding:0 2rem;">
+      <div class="filter-bar-port" id="filterBar">
+        <button class="filter-btn-port active" data-filter="ALL">All</button>
+        <button class="filter-btn-port" data-filter="WEDDINGS">Weddings</button>
+        <button class="filter-btn-port" data-filter="PREWEDDING">PreWedding</button>
+        <button class="filter-btn-port" data-filter="ENGAGEMENT">Engagement</button>
+        <button class="filter-btn-port" data-filter="RECEPTION">Reception</button>
+        <button class="filter-btn-port" data-filter="HALDI">Haldi</button>
+        <button class="filter-btn-port" data-filter="SANGEET">Sangeet</button>
+        <button class="filter-btn-port" data-filter="BABYSHOOTS">Babyshoots</button>
+        <button class="filter-btn-port" data-filter="BIRTHDAYS">Birthdays</button>
+        <button class="filter-btn-port" data-filter="PORTRAITS">Portraits</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Collection Cards Row -->
+  <div class="collection-section">
+    <div class="collection-row" id="collectionRow">
+      <!-- Cards removed as requested -->
+    </div>
+
+    <!-- Coming Soon State -->
+    <div class="coming-soon" id="comingSoon">
+      <p class="coming-soon-label">— Coming Soon</p>
+      <h2 id="comingSoonMsg">New work is being curated.</h2>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">The<span class="gold italic">Kalyaanam</span>Frames</span>
+          <p>Modern editorial wedding photography &amp; cinematography based in South India.</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+            <a href="#"><i data-lucide="" style="width:18px;height:18px;"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">Studio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:thekalyaanamframes@gmail.com">thekalyaanamframes@gmail.com</a></li>
+            <li><a href="tel:+91 63058 43819">+91 63058 43819</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:0.9rem;margin-top:1rem;">Karimnagar, Telangana</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 The KalyaanamFrames. All rights reserved.</p>
+        <p>Made with ♥ in Karimnagar</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Portfolio filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn-port');
+    const cards = document.querySelectorAll('.col-card');
+    const comingSoon = document.getElementById('comingSoon');
+    const comingSoonMsg = document.getElementById('comingSoonMsg');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        let visible = 0;
+        cards.forEach(card => {
+          if (filter === 'ALL' || card.getAttribute('data-cat') === filter) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        if (visible === 0) {
+          comingSoonMsg.textContent = 'New work is being curated for ' + btn.textContent + '.';
+          comingSoon.classList.add('active');
+        } else {
+          comingSoon.classList.remove('active');
+        }
+        // Scroll row back to start on filter change
+        document.getElementById('collectionRow').scrollLeft = 0;
+      });
+    });
+
+    // Check URL param ?category=XXX and auto-select
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('category');
+    if (cat) {
+      const match = document.querySelector(`.filter-btn-port[data-filter="${cat.toUpperCase()}"]`);
+      if (match) match.click();
+    }
+  </script>
+</body>
+</html>
