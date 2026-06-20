@@ -1,4 +1,4 @@
-# TheKalyanamFrames Website
+# TheKalyaanamFrames Website
 
 Photography studio website with Node.js + Express backend connected to MongoDB Compass.
 
@@ -50,7 +50,7 @@ Open your browser and go to:
 
 1. Open MongoDB Compass
 2. Connect to: `mongodb://127.0.0.1:27017`
-3. In the left panel, click **thekalyanamframes** database
+3. In the left panel, click **thekalyaanamframes** database
 4. Click the **inquiries** collection
 5. All contact form submissions will appear here ✅
 
@@ -85,4 +85,7 @@ thekalyanamframes_fixed/
 | GET | http://localhost:3000/api/health | Check server + DB status |
 | POST | http://localhost:3000/api/inquiries | Submit contact form |
 | GET | http://localhost:3000/api/inquiries | View all inquiries |
+
+## Website
+The site is live at: https://the-kalyaanamframes.vercel.app/
 
