@@ -87,5 +87,5 @@ thekalyanamframes_fixed/
 | GET | http://localhost:3000/api/inquiries | View all inquiries |
 
 ## Website
-The site is live at: https://the-kalyaanamframes.vercel.app/
+The site is live at: https://the-kalyanaamframes.vercel.app/
 
